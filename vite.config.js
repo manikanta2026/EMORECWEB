@@ -1,13 +1,14 @@
+// vite.config.js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 5173,
+    host: '0.0.0.0',                      // required by Render
+    port: process.env.PORT || 5173,       // allows Render to assign the port
     proxy: {
-      '/api': 'http://localhost:5000'
+      '/api': 'http://localhost:5000'     // keeps your API proxy
     }
   }
 })
