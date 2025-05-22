@@ -1,14 +1,14 @@
-// vite.config.js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: '0.0.0.0',                      // required by Render
-    port: process.env.PORT || 5173,       // allows Render to assign the port
+    host: '0.0.0.0',
+    port: process.env.PORT || 5173,
+    allowedHosts: ['emorecweb.onrender.com'], // ✅ Add this line
     proxy: {
-      '/api': 'http://localhost:5000'     // keeps your API proxy
+      '/api': 'http://localhost:5000'
     }
   }
 })
