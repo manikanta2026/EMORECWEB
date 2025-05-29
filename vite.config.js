@@ -9,6 +9,7 @@ export default defineConfig({
     allowedHosts: ['emorecweb.onrender.com'], // ✅ Add this line
     proxy: {
       '/api': 'http://localhost:5000'
-    }
+    },
+    historyApiFallback: true
   }
 })
