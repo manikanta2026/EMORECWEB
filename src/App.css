@@ -100,6 +100,10 @@
   margin: 0 auto;
   text-align: center;
   max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .upload-zone {
@@ -108,9 +112,12 @@
   margin-bottom: 20px;
   cursor: pointer;
   border-radius: 8px;
-  max-width:40vw;
-  align-items: center;
-  margin-left: 30vw;
+  max-width: 400px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
   display : flex;
   justify-content: center;
 }
@@ -119,13 +126,25 @@
   background-color: #f0f8ff;
 }
 
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
 .predict-button {
   background-color: #007bff;
   color: white;
   padding: 10px 20px;
+  font-size: 1rem;
+  min-width: 120px;
   margin: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   cursor: pointer;
 }
 
@@ -215,25 +234,24 @@
     max-width: 90%;
   }
   .upload-zone {
-    max-width: 90%;
-    margin: 0 auto 20px;
+    max-width: 95vw;
+    min-width: 0;
+    margin: 0 auto 20px auto;
+    padding: 16px;
+    flex-direction: column;
+  }
+  .button-container {
+    flex-direction: column;
+    gap: 0.5rem;
   }
   .prediction-result {
-    padding: 1rem;
-  }
-  .mel-spectrogram, .emotion-chart {
-    max-width: 400px;
-  }
-  .mel-spectrogram img {
-    max-height: 250px;
+    align-items: center;
+    justify-content: center;
   }
   .plots-container {
-    flex-direction: column;
+    margin-left: 0;
     align-items: center;
-    gap: 1rem;
-  }
-  .plot-item {
-    width: 90%;
+    justify-content: center;
   }
 }
 
@@ -271,6 +289,31 @@
   }
   .mel-spectrogram img {
     max-height: 200px;
+  }
+  .upload-page {
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .upload-zone {
+    max-width: 98vw;
+    min-width: 0;
+    margin: 0 auto 10px auto;
+    padding: 10px;
+    flex-direction: column;
+  }
+  .button-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .prediction-result {
+    align-items: center;
+    justify-content: center;
+  }
+  .plots-container {
+    margin-left: 0;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -314,6 +357,24 @@
     flex-direction: column;
     align-items: center;
   }
+  .upload-zone {
+    min-width: 350px;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    flex-direction: column;
+  }
+  .button-container {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .predict-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    min-width: 140px;
+    margin: 0.5rem;
+    border-radius: 0.7rem;
+  }
   .plots-container {
     max-width: 1400px;
     gap: 3rem;
@@ -329,24 +390,8 @@
     max-width: 80%;
     max-height: 400px;
   }
-  .upload-zone {
-    min-width: 40vw;
-    margin: 2rem auto;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-width: medium;
-  }
   p{
     font-size: 1.7rem;
-  }
-  .predict-button {
-    padding: 2rem 3rem;
-    font-size: 2rem;
-    min-width: 200px;
-    margin: 1rem;
-    border-radius: 1rem;
   }
   .prediction-result {
     width: 100%;
